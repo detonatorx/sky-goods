@@ -1,0 +1,10 @@
+.dropdown {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+
+  &__container {
+    width: 288px;
+  }
+}

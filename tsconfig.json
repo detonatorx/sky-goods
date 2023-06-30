@@ -2,5 +2,7 @@
   "compilerOptions": {  
     "jsx": "react-jsx",
     "esModuleInterop": true,
-  }
+  },
+  "include": ["src/components", "src/types/index.d.ts"],
+  // "files": ["src/types/index.d.ts"]
 }
