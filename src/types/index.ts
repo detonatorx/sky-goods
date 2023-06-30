@@ -12,6 +12,10 @@ export interface DataItem {
   date: string;
 }
 
+export interface BaskeDatatItem extends DataItem {
+  quantity: number;
+}
+
 export type DropdownProps = {
   onChange: (selectedOption: Option) => void;
   options: Option[];
@@ -21,6 +25,14 @@ export type ProductsProps = {
   selectedOption: Option;
 };
 
-export type CardProps= {
+export type CardProps = {
   item: DataItem;
+}
+
+export type BasketProps = {
+  item: BaskeDatatItem;
+}
+
+export interface BasketState {
+  value: number
 }

@@ -14,7 +14,6 @@ const Products = ({ selectedOption }: ProductsProps) => {
 
   return (
     <>
-      {console.log('data', data)}
       {
         isLoading ? (
           <div className="spinner" >

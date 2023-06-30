@@ -16,11 +16,10 @@ export const useDataQuery = () => {
       const newData = [...mock];
 
       newData?.sort((a, b) => {
-        const dateA = new Date(a.date.split('.').join('-'));
-        const dateB = new Date(b.date.split('.').join('-'));
+        const dateA = new Date(a.date).getTime();
+        const dateB = new Date(b.date).getTime();
         return selectedOption.value === 'old'
-          ? dateA.getTime() - dateB.getTime()
-          : dateB.getTime() - dateA.getTime();
+          ? dateA - dateB : dateB - dateA;
       });
 
       setData(newData);
