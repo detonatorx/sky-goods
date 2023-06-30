@@ -33,7 +33,12 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         loader: "ts-loader"
-      }
+      },
+      // scss files are parsed using `style-loader`, `css-loader`, and `sass-loader`
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
   resolve: {
