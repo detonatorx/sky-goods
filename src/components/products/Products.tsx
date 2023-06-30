@@ -3,10 +3,9 @@ import './Products.scss'
 import Card from '../card/Card';
 import { useDataQuery } from '../../hooks/use-data-query';
 import spinner from '../../assets/spinner.gif';
+import { ProductsProps } from '../../types';
 
-type Props = {}
-
-const Products = ({ selectedOption }) => {
+const Products = ({ selectedOption }: ProductsProps) => {
   const { data, getList, isLoading } = useDataQuery();
 
   useEffect(() => {
@@ -15,7 +14,7 @@ const Products = ({ selectedOption }) => {
 
   return (
     <>
-    {console.log('data', data)}
+      {console.log('data', data)}
       {
         isLoading ? (
           <div className="spinner" >

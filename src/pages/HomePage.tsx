@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import Products from '../components/products/Products';
 import Dropdown from '../components/ui/Dropdown';
-
-type Props = {}
+import { Option } from '../types';
 
 const options = [
   { value: 'new', label: 'Порядок: сперва новые' },
   { value: 'old', label: 'Порядок: сперва старые' },
 ]
 
-const HomePage = (props: Props) => {
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+const HomePage = () => {
+  const [selectedOption, setSelectedOption] = useState<Option>(options[0]);
 
-  const handleSelectChange = (selectedOption) => {
+  const handleSelectChange = (selectedOption: Option) => {
     setSelectedOption(selectedOption);
   };
 

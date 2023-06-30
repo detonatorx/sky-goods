@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import './Dropdown.scss'
 import Select, { components } from 'react-select'
 import arrow from '../../assets/arrow-down.png'
-
-type Props = {}
+import { DropdownProps } from '../../types'
 
 const customStyles = {
   control: (provided) => ({
@@ -21,9 +20,7 @@ const DropdownIndicator = (props) => {
   );
 };
 
-const Dropdown = ({ onChange, options }) => {
-
-
+const Dropdown = ({ onChange, options }: DropdownProps) => {
   return (
     <div className="dropdown">
       <div className="dropdown__container">
