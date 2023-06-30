@@ -4,8 +4,13 @@ import Dropdown from '../components/ui/Dropdown';
 
 type Props = {}
 
+const options = [
+  { value: 'new', label: 'Порядок: сперва новые' },
+  { value: 'old', label: 'Порядок: сперва старые' },
+]
+
 const HomePage = (props: Props) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const handleSelectChange = (selectedOption) => {
     setSelectedOption(selectedOption);
@@ -13,8 +18,8 @@ const HomePage = (props: Props) => {
 
   return (
     <>
-      <Dropdown onChange={handleSelectChange}/>
-      <Products />
+      <Dropdown onChange={handleSelectChange} options={options} />
+      <Products selectedOption={selectedOption} />
     </>
   )
 }

@@ -3,11 +3,6 @@ import './Dropdown.scss'
 import Select, { components } from 'react-select'
 import arrow from '../../assets/arrow-down.png'
 
-const options = [
-  { value: 'new', label: 'Порядок: сперва новые' },
-  { value: 'old', label: 'Порядок: сперва старые' },
-]
-
 type Props = {}
 
 const customStyles = {
@@ -26,7 +21,7 @@ const DropdownIndicator = (props) => {
   );
 };
 
-const Dropdown = ({ onChange }) => {
+const Dropdown = ({ onChange, options }) => {
 
 
   return (

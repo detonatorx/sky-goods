@@ -6,15 +6,16 @@ import spinner from '../../assets/spinner.gif';
 
 type Props = {}
 
-const Products = (props: Props) => {
+const Products = ({ selectedOption }) => {
   const { data, getList, isLoading } = useDataQuery();
 
   useEffect(() => {
-    getList();
-  }, [])
+    getList(selectedOption);
+  }, [selectedOption])
 
   return (
     <>
+    {console.log('data', data)}
       {
         isLoading ? (
           <div className="spinner" >
