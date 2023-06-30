@@ -2,11 +2,9 @@
   max-width: 1200px;
   background-color: #CCCCCC;
   padding: 16px 0;
-  position: fixed;
-  top: 0;
+  position: block;
   height: 77px;
   width: 100%;
-  z-index: 1;
 
   &__container {
     width: 100%;

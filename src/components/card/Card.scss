@@ -1,0 +1,39 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__price,
+  &__title {
+    margin-top: 8px;
+    font-size: 24px;
+    color: #050505;
+    font-weight: 500;
+  }
+
+  &__description {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #888888;
+    font-weight: 400;
+  }
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.product-card p:last-child {
+  margin-bottom: 0;
+}
