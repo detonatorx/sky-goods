@@ -3,15 +3,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
-  padding-bottom: 100px;
-  height: 100%;
+  margin-bottom: 100px;
+  overflow-y: scroll;
 }
 
 .spinner {
   position: absolute;
   margin: auto;
-  // height: 50px;
-  // width: 50px;
   display: block;
   top: 35%;
   left: 50%;
