@@ -26,13 +26,25 @@ const Basket = () => {
     },
   ]);
 
-  const handleQuantityChange = (itemId, newQuantity) => {
+  const handleQuantityChange = (itemId: number, newQuantity: number) => {
     setItems((prevItems) =>
       prevItems.map((item) =>
         item.id === itemId ? { ...item, quantity: newQuantity } : item
       )
     );
   };
+
+  const calculateLast = (number: number) => {
+    return items?.length === (number + 1) ? "hide" : "line"
+  };
+
+  const handleFavourite = (itemId: number) => {
+
+  }
+
+  const handleRemove = (itemId: number) => {
+
+  }
 
   return (
     <div className="basket">
@@ -43,24 +55,32 @@ const Basket = () => {
               <th className='table__item'>Товар</th>
               <th className='table__quantity'>Кол-во</th>
             </tr>
+            <tr>
+              <div className='line'></div>
+            </tr>
           </thead>
           <tbody>
-            {items.map((item) => (
-              <tr key={item.id}>
-                <td className='table__item'>
-                  <BasketItem item={item} />
-                </td>
-                <td className='table__right'>
-                  <input
-                    className='table__quantity'
-                    type="number"
-                    value={item.quantity}
-                    onChange={(e) =>
-                      handleQuantityChange(item.id, parseInt(e.target.value))
-                    }
-                  />
-                </td>
-              </tr>
+            {items.map((item, idx) => (
+              <>
+                <tr key={item.id}>
+                  <td className='table__item'>
+                    <BasketItem item={item} onFavourite={handleFavourite} onRemove={handleRemove} />
+                  </td>
+                  <td className='table__quantity'>
+                    <input
+                      className='table__input'
+                      type="number"
+                      value={item.quantity}
+                      onChange={(e) =>
+                        handleQuantityChange(item.id, parseInt(e.target.value))
+                      }
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <div className={calculateLast(idx)}></div>
+                </tr>
+              </>
             ))}
           </tbody>
         </table>
@@ -68,7 +88,7 @@ const Basket = () => {
       <div className="basket__order">
         <Order />
       </div>
-    </div>
+    </div >
   );
 }
 
