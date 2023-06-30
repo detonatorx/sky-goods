@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+
+.container {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: lightcoral;
+}
