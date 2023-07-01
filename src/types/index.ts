@@ -36,7 +36,7 @@ export type BasketProps = {
 }
 
 export interface BasketState {
-  value: number;
+  array: BaskeDatatItem[];
 }
 
 export interface FavouriteState {

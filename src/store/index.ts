@@ -5,6 +5,7 @@ import favouriteReducer from './favouriteReducer'
 export const store = configureStore({
   reducer: {
     favourite: favouriteReducer,
+    basket: basketReducer,
   }
 })
 

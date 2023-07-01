@@ -1,31 +1,14 @@
 import React, { useState } from 'react'
 import './Basket.scss'
 import Order from '../order/Order'
-import { BaskeDatatItem } from '../../types'
+import { BaskeDatatItem, BasketState } from '../../types'
 import BasketItem from '../basket-item/BasketItem'
 import Input from '../ui/input/Input'
+import { useSelector } from 'react-redux';
 
 const Basket = () => {
-  const [items, setItems] = useState<BaskeDatatItem[] | null>([
-    {
-      id: 2,
-      name: 'Кресло VILORA',
-      description: 'Мягкое и уютное, аккуратное и стильное. Упругие подушки сиденья и приятная на ощупь ткань.',
-      price: 21000,
-      img: 'https://i.ibb.co/LRKhYHC/Rectangle-23.png',
-      date: '2023.05.01',
-      quantity: 1
-    },
-    {
-      id: 3,
-      name: 'Стол MENU',
-      description: 'Европейский дуб - отличается особой прочностью и стабильностью.',
-      price: 34000,
-      img: 'https://i.ibb.co/8Kz5DWm/Rectangle-24.png',
-      date: '2023.04.01',
-      quantity: 3
-    },
-  ]);
+  const { array } = useSelector((state: { basket: BasketState }) => state.basket);
+  const [items, setItems] = useState<BaskeDatatItem[] | null>(array);
 
   const handleQuantityChange = (itemId: number, newQuantity: number) => {
     setItems((prevItems) =>
@@ -68,14 +51,6 @@ const Basket = () => {
                     <BasketItem item={item} onFavourite={handleFavourite} onRemove={handleRemove} />
                   </td>
                   <td className='table__quantity'>
-                    {/* <input
-                      className='table__input'
-                      type="number"
-                      value={item.quantity}
-                      onChange={(e) =>
-                        handleQuantityChange(item.id, parseInt(e.target.value))
-                      }
-                    /> */}
                     <Input />
                   </td>
                 </tr>
