@@ -38,12 +38,7 @@ export const basketSlice = createSlice({
 
       if (existingItem) {
         existingItem.quantity += 1;
-      } else {
-        state.array.push({
-          ...existingItem,
-          quantity: existingItem.quantity + 1,
-        });
-      }
+      } 
     },
     removeQuantity: (state, action: PayloadAction<number>) => {
       const existingItem = state.array.find(item => item.id === action.payload);

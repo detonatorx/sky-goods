@@ -2,8 +2,6 @@ import React from 'react'
 import './Order.scss'
 import { OrderProps } from '../../types'
 
-type Props = {}
-
 const Order = ({ total }: OrderProps) => {
   return (
     <div className='order'>
