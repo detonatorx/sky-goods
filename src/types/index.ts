@@ -31,8 +31,6 @@ export type CardProps = {
 
 export type BasketProps = {
   item: BaskeDatatItem;
-  onFavourite: (itemId: number) => void;  
-  onRemove: (itemId: number) => void;
 }
 
 export interface BasketState {

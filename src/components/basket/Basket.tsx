@@ -10,28 +10,10 @@ import { removeFromBasket } from '../../store/basketReducer'
 
 const Basket = () => {
   const { array } = useSelector((state: { basket: BasketState }) => state.basket);
-  const dispatch = useDispatch();
-  // const [items, setItems] = useState<BaskeDatatItem[] | null>(array);
-
-  // const handleQuantityChange = (itemId: number, newQuantity: number) => {
-  //   setItems((prevItems) =>
-  //     prevItems.map((item) =>
-  //       item.id === itemId ? { ...item, quantity: newQuantity } : item
-  //     )
-  //   );
-  // };
 
   const calculateLast = (number: number) => {
     return array?.length === (number + 1) ? "hide" : "line"
   };
-
-  const handleFavourite = (itemId: number) => {
-    dispatch(addToFavourite(itemId))
-  }
-
-  const handleRemove = (itemId: number) => {
-    dispatch(removeFromBasket(itemId))
-  }
 
   return (
     <div className="basket">
@@ -51,7 +33,7 @@ const Basket = () => {
               <>
                 <tr key={item.id}>
                   <td className='table__item'>
-                    <BasketItem item={item} onFavourite={handleFavourite} onRemove={handleRemove} />
+                    <BasketItem item={item} />
                   </td>
                   <td className='table__quantity'>
                     <Input item={item} />

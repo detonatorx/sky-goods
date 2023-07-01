@@ -12,11 +12,20 @@
 
   &__favourite,
   &__remove {
+    display: flex;
     text-decoration: underline;
     cursor: pointer;
+    padding-bottom: 10px;
 
     &:hover {
       color: lightcoral;
+    }
+  }
+
+  &__favourite {
+    img {
+      height: 20px;
+      width: 20px;
     }
   }
 
@@ -72,4 +81,9 @@
 
 .basket-card p:last-child {
   margin-bottom: 0;
+}
+
+.coral {
+  color: lightcoral;
+  text-decoration-color: lightcoral;
 }
