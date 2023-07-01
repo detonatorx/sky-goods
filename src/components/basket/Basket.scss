@@ -22,12 +22,14 @@
     font-size: 16px;
     color: #050505;
     font-weight: 500;
+    vertical-align: middle;
   }
 
   &__item {
     width: 100%;
     display: flex;
     justify-content: start;
+    align-items: center;
     width: 100%;
   }
 
@@ -35,7 +37,6 @@
     width: 70px;
     display: table-cell;
     vertical-align: top;
-    padding-top: 25px;
   }
 }
 
