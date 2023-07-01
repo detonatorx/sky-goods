@@ -2,15 +2,12 @@ import React, { useState } from 'react'
 import './Input.scss'
 import up from '../../../assets/up.png'
 import down from '../../../assets/down.png'
-import { BasketState, FavouriteState, InputState } from '../../../types'
-import { useDispatch, useSelector } from 'react-redux'
+import { InputState } from '../../../types'
+import { useDispatch } from 'react-redux'
 import { addQuantity, removeQuantity } from '../../../store/basketReducer';
 
 const Input = ({ item }: InputState) => {
-  const { array } = useSelector((state: { basket: BasketState }) => state.basket);
   const dispatch = useDispatch();
-
-  const found = array.find(el => el.id === item.id)
 
   const handleIncrease = () => {
     dispatch(addQuantity(item.id))
@@ -21,7 +18,7 @@ const Input = ({ item }: InputState) => {
 
   return (
     <form>
-      <input type="number" id="number" value={found?.quantity} max="5" />
+      <input type="number" id="number" value={item?.quantity} max="5" />
       <div className="column">
         <div className="column__buttons">
           <div className="value-button" onClick={handleIncrease} >

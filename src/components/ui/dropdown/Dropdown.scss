@@ -13,3 +13,11 @@
 [class*="css"][class*="Input"] {
   height: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .dropdown {
+    &__container {
+      padding: 0 25px;
+    }
+  }
+}
