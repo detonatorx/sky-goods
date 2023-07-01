@@ -6,8 +6,6 @@ import { BasketState, FavouriteState, InputState } from '../../../types'
 import { useDispatch, useSelector } from 'react-redux'
 import { addQuantity, removeQuantity } from '../../../store/basketReducer';
 
-type Props = {}
-
 const Input = ({ item }: InputState) => {
   const { fav_ids } = useSelector((state: { favourite: FavouriteState }) => state.favourite);
   const { array } = useSelector((state: { basket: BasketState }) => state.basket);

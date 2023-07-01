@@ -10,7 +10,7 @@
 
   &__order {
     min-width: 376px;
-    border: 1px solid #000000;
+    min-height: 475px;
   }
 }
 
@@ -23,6 +23,10 @@
     color: #050505;
     font-weight: 500;
     vertical-align: middle;
+
+    input {
+      font-family: Poppins;
+    }
   }
 
   &__item {

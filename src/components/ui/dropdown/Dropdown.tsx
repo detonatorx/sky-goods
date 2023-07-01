@@ -9,7 +9,6 @@ const customStyles = {
     ...provided,
     borderRadius: '30px',
   }),
-
 };
 
 const DropdownIndicator: React.FC<DropdownIndicatorProps> = (props) => {

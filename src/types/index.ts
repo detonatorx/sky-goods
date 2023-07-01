@@ -33,6 +33,10 @@ export type BasketProps = {
   item: BaskeDatatItem;
 }
 
+export type OrderProps = {
+  total: number;
+}
+
 export interface BasketState {
   array: BaskeDatatItem[];
 }
