@@ -38,22 +38,26 @@
     top: 16px;
     right: 16px;
     display: flex;
-    gap: 16px;
+    gap: 10px;
 
     div {
       cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
+      // background: dimgray;
+      // border-radius: 6px;
 
       &:hover {
-        background: lightcoral;
-        border-radius: 6px;
+        -webkit-filter: drop-shadow(5px 5px 5px lightcoral);
+        filter: drop-shadow(5px 5px 5px lightcoral);
       }
     }
     .cart, .heart {
       width: 24px;
       height: 24px;
+      -webkit-filter: drop-shadow(5px 5px 5px #FFF);
+      filter: drop-shadow(5px 5px 5px #FFF);
     }
   }
 }

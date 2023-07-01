@@ -39,6 +39,10 @@ export interface BasketState {
   value: number;
 }
 
+export interface FavouriteState {
+  fav_ids: number[];
+}
+
 interface DropdownIndicatorProps {
   [key: string]: any;
 }

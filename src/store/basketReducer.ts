@@ -7,7 +7,7 @@ const initialState: BasketState = {
 }
 
 export const basketSlice = createSlice({
-  name: 'quantity',
+  name: 'basket',
   initialState,
   reducers: {
     increment: (state) => {
