@@ -15,11 +15,11 @@ const Basket = () => {
     return array?.length === (number + 1) ? "hide" : "line"
   };
 
-  const calculateTotal = useMemo(() => {
+  const calculateTotal = (): number => {
     return array?.reduce((acc: number, item: BaskeDatatItem) => {
       return acc + item.price * item.quantity
     }, 0)
-  }, [array])
+  }
 
   return (
     <div className="basket">
@@ -57,7 +57,7 @@ const Basket = () => {
         }
       </div>
       <div className="basket__order">
-        {calculateTotal > 0 && <Order total={calculateTotal} />}
+        {array?.length > 0 && <Order total={calculateTotal()} />}
       </div>
     </div >
   );

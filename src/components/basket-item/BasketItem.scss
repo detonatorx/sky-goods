@@ -87,3 +87,21 @@
   color: lightcoral;
   text-decoration-color: lightcoral;
 }
+
+@media only screen and (max-width: 600px) {
+  .basket-card {
+    &__buttons {
+      gap: 10px;
+      
+    }
+
+    &__left {
+      display: none;
+    }
+
+    &__right {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}

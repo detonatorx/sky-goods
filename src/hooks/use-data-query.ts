@@ -8,7 +8,7 @@ export const useDataQuery = () => {
 
   const getList = async (selectedOption: Option) => {
     setIsLoading(true);
-    console.log('selectedOption', selectedOption);
+
     try {
       // Simulate an asynchronous API call
       await new Promise((resolve) => setTimeout(resolve, 1000));

@@ -12,4 +12,13 @@
   display: block;
   top: 35%;
   left: 50%;
-  transform: translate(-50%);}
+  transform: translate(-50%);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .products-container {
+    padding: 25px;
+    margin-top: 0;
+  }
+}

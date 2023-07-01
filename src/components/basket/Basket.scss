@@ -7,11 +7,6 @@
   &__list {
     width: 100%;
   }
-
-  &__order {
-    min-width: 376px;
-    min-height: 475px;
-  }
 }
 
 .table {
@@ -48,4 +43,28 @@
 
 .hide {
   display: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .basket {
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 25px 40px 25px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) {
+  .basket {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .basket {
+    flex-direction: row;
+  }
 }
