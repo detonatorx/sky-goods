@@ -11,7 +11,7 @@ export const useDataQuery = () => {
     console.log('selectedOption', selectedOption);
     try {
       // Simulate an asynchronous API call
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const newData = [...mock];
 

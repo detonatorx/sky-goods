@@ -4,6 +4,7 @@
   justify-content: space-between;
   min-height: 350px;
   max-height: 500px;
+  width: 100%;
 
   &__price,
   &__title {
@@ -19,9 +20,40 @@
     color: #888888;
     font-weight: 400;
   }
-}
 
-.product-card img {
-  width: 100%;
-  height: auto;
+  &__image {
+    position: relative;
+    height: 250px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Adjust how the image fills the container */
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 16px;
+
+    div {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background: lightcoral;
+        border-radius: 6px;
+      }
+    }
+    .cart, .heart {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }

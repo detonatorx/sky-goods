@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Products from '../components/products/Products';
-import Dropdown from '../components/ui/Dropdown';
 import { Option } from '../types';
+import Dropdown from '../components/ui/dropdown/Dropdown';
 
 const options = [
   { value: 'new', label: 'Порядок: сперва новые' },

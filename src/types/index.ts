@@ -38,3 +38,7 @@ export type BasketProps = {
 export interface BasketState {
   value: number;
 }
+
+interface DropdownIndicatorProps {
+  [key: string]: any;
+}

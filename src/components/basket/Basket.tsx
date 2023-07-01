@@ -3,6 +3,7 @@ import './Basket.scss'
 import Order from '../order/Order'
 import { BaskeDatatItem } from '../../types'
 import BasketItem from '../basket-item/BasketItem'
+import Input from '../ui/input/Input'
 
 const Basket = () => {
   const [items, setItems] = useState<BaskeDatatItem[] | null>([
@@ -67,14 +68,15 @@ const Basket = () => {
                     <BasketItem item={item} onFavourite={handleFavourite} onRemove={handleRemove} />
                   </td>
                   <td className='table__quantity'>
-                    <input
+                    {/* <input
                       className='table__input'
                       type="number"
                       value={item.quantity}
                       onChange={(e) =>
                         handleQuantityChange(item.id, parseInt(e.target.value))
                       }
-                    />
+                    /> */}
+                    <Input />
                   </td>
                 </tr>
                 <tr>

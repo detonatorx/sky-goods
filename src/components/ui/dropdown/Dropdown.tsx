@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Dropdown.scss'
-import Select, { components } from 'react-select'
-import arrow from '../../assets/arrow-down.png'
-import { DropdownProps } from '../../types'
+import Select, { DropdownIndicatorProps, components } from 'react-select'
+import arrow from '../../../assets/arrow-down.png'
+import { DropdownProps } from '../../../types';
 
 const customStyles = {
   control: (provided) => ({
@@ -12,10 +12,10 @@ const customStyles = {
 
 };
 
-const DropdownIndicator = (props) => {
+const DropdownIndicator: React.FC<DropdownIndicatorProps> = (props) => {
   return (
     <components.DropdownIndicator {...props}>
-      <img src={arrow} />
+      <img src={arrow} alt="Dropdown Indicator" />
     </components.DropdownIndicator>
   );
 };
