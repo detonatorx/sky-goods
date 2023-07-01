@@ -23,9 +23,7 @@ export const basketSlice = createSlice({
 
       if (existingItem && existingItem.quantity < MAXIMUM) {
         existingItem.quantity += 1;
-      } else {
-        alert(`Вы добавили максимальное количество товара (${MAXIMUM} шт.)`)
-      }
+      } 
     },
     removeQuantity: (state, action: PayloadAction<number>) => {
       const existingItem = state.array.find(item => item.id === action.payload);

@@ -21,7 +21,7 @@ const Input = ({ item }: InputState) => {
 
   return (
     <form>
-      <input type="number" id="number" value={found?.quantity} />
+      <input type="number" id="number" value={found?.quantity} max="5" />
       <div className="column">
         <div className="column__buttons">
           <div className="value-button" onClick={handleIncrease} >

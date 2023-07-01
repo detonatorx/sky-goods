@@ -31,6 +31,7 @@ const Dropdown = ({ onChange, options }: DropdownProps) => {
           options={options}
           styles={customStyles}
           onChange={onChange}
+          isSearchable={false}
         />
       </div>
     </div>
