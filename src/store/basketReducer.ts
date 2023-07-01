@@ -33,30 +33,30 @@ export const basketSlice = createSlice({
     removeFromBasket: (state, action: PayloadAction<number>) => {
       state.array = state.array.filter((item) => item.id !== action.payload)
     },
-    addQuantity: (state, action: PayloadAction<DataItem>) => {
-      const { id, name, description, price, img, date } = action.payload;
-      const existingItem = state.array.find(item => item.id === id);
+    addQuantity: (state, action: PayloadAction<number>) => {
+      const existingItem = state.array.find(item => item.id === action.payload);
 
       if (existingItem) {
         existingItem.quantity += 1;
       } else {
         state.array.push({
-          id,
-          name,
-          description,
-          price,
-          img,
-          date,
-          quantity: 1,
+          ...existingItem,
+          quantity: existingItem.quantity + 1,
         });
       }
     },
-    removeQuantity: (state, action: PayloadAction<DataItem>) => {
-      console.log(action.payload);
+    removeQuantity: (state, action: PayloadAction<number>) => {
+      const existingItem = state.array.find(item => item.id === action.payload);
+
+      if (existingItem && existingItem.quantity > 1) {
+        existingItem.quantity -= 1;
+      } else {
+        state.array = state.array.filter((item) => item.id !== action.payload)
+      }    
     }
   },
 })
 
-export const { addToBasket, removeFromBasket } = basketSlice.actions
+export const { addToBasket, removeFromBasket, addQuantity, removeQuantity } = basketSlice.actions
 
 export default basketSlice.reducer

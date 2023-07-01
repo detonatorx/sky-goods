@@ -4,30 +4,33 @@ import Order from '../order/Order'
 import { BaskeDatatItem, BasketState } from '../../types'
 import BasketItem from '../basket-item/BasketItem'
 import Input from '../ui/input/Input'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToFavourite } from '../../store/favouriteReducer'
+import { removeFromBasket } from '../../store/basketReducer'
 
 const Basket = () => {
   const { array } = useSelector((state: { basket: BasketState }) => state.basket);
-  const [items, setItems] = useState<BaskeDatatItem[] | null>(array);
+  const dispatch = useDispatch();
+  // const [items, setItems] = useState<BaskeDatatItem[] | null>(array);
 
-  const handleQuantityChange = (itemId: number, newQuantity: number) => {
-    setItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === itemId ? { ...item, quantity: newQuantity } : item
-      )
-    );
-  };
+  // const handleQuantityChange = (itemId: number, newQuantity: number) => {
+  //   setItems((prevItems) =>
+  //     prevItems.map((item) =>
+  //       item.id === itemId ? { ...item, quantity: newQuantity } : item
+  //     )
+  //   );
+  // };
 
   const calculateLast = (number: number) => {
-    return items?.length === (number + 1) ? "hide" : "line"
+    return array?.length === (number + 1) ? "hide" : "line"
   };
 
   const handleFavourite = (itemId: number) => {
-
+    dispatch(addToFavourite(itemId))
   }
 
   const handleRemove = (itemId: number) => {
-
+    dispatch(removeFromBasket(itemId))
   }
 
   return (
@@ -44,14 +47,14 @@ const Basket = () => {
             </tr>
           </thead>
           <tbody>
-            {items.map((item, idx) => (
+            {array?.length > 0 && array.map((item, idx) => (
               <>
                 <tr key={item.id}>
                   <td className='table__item'>
                     <BasketItem item={item} onFavourite={handleFavourite} onRemove={handleRemove} />
                   </td>
                   <td className='table__quantity'>
-                    <Input />
+                    <Input item={item} />
                   </td>
                 </tr>
                 <tr>
