@@ -4,12 +4,13 @@ form {
   height: 50px;
   width: 70px;
   border-radius: 6px;
+  background: #F7F6F6;
 }
 
 input {
   height: 51px;
-  background: #F7F6F6;
   border-radius: 6px;
+  background: #F7F6F6;
 }
 
 .value-button img {
@@ -23,8 +24,6 @@ input {
   justify-content: center;
   padding-right: 10px;
   height: 100%;
-  background: #F7F6F6;
-  border-radius: 6px;
 
   &__buttons {
     display: flex;

@@ -1,27 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-// import { BasketState } from '../types'
+import { BasketState, DataItem } from '../types'
 
 const initialState: BasketState = {
   array: []
 }
 
-export interface BasketState {
-  array: BaskeDatatItem[];
-}
-
-export interface DataItem {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  img: string;
-  date: string;
-}
-
-export interface BaskeDatatItem extends DataItem {
-  quantity: number;
-}
+const MAXIMUM = 5;
 
 export const basketSlice = createSlice({
   name: 'basket',
@@ -36,9 +21,11 @@ export const basketSlice = createSlice({
     addQuantity: (state, action: PayloadAction<number>) => {
       const existingItem = state.array.find(item => item.id === action.payload);
 
-      if (existingItem) {
+      if (existingItem && existingItem.quantity < MAXIMUM) {
         existingItem.quantity += 1;
-      } 
+      } else {
+        alert(`Вы добавили максимальное количество товара (${MAXIMUM} шт.)`)
+      }
     },
     removeQuantity: (state, action: PayloadAction<number>) => {
       const existingItem = state.array.find(item => item.id === action.payload);
@@ -47,7 +34,7 @@ export const basketSlice = createSlice({
         existingItem.quantity -= 1;
       } else {
         state.array = state.array.filter((item) => item.id !== action.payload)
-      }    
+      }
     }
   },
 })
